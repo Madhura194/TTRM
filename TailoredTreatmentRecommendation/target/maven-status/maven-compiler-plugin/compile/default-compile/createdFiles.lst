@@ -1,0 +1,12 @@
+com\ttr\dto\Item.class
+com\ttr\service\TTRServiceImpl.class
+com\ttr\dto\DiseaseDrug.class
+META-INF\spring-configuration-metadata.json
+com\ttr\dto\Address.class
+com\ttr\dto\GeolocationData.class
+com\ttr\rest\TTRController.class
+com\ttr\dto\AutosuggestData.class
+com\ttr\service\TTRService.class
+com\ttr\TailoredTreatmentRecommendationApplication.class
+com\ttr\dataaccess\TTRRepo.class
+com\ttr\config\ApiProperties.class

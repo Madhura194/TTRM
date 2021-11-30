@@ -1,0 +1,105 @@
+@import "src/mixins.scss";
+@import "src/variables.scss";
+
+@font-face {
+  font-family: "BundesSans Web";
+  src: url("assets/fonts/BundesSansWeb/BundesSansWeb.eot");
+  src: local("BundesSans Web"), local("BundesSansWeb"),
+    url("assets/fonts/BundesSansWeb/BundesSansWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/BundesSansWeb/BundesSansWeb.woff2") format("woff2"),
+    url("assets/fonts/BundesSansWeb/BundesSansWeb.woff") format("woff"),
+    url("assets/fonts/BundesSansWeb/BundesSansWeb.ttf") format("truetype"),
+    url("assets/fonts/BundesSansWeb/BundesSansWeb.svg#BundesSansWeb")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BundesSerif Web";
+  src: url("assets/fonts/BundesSerifWeb/BundesSerifWeb.eot");
+  src: local("BundesSerif Web"), local("BundesSerifWeb"),
+    url("assets/fonts/BundesSerifWeb/BundesSerifWeb.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/BundesSerifWeb/BundesSerifWeb.woff2") format("woff2"),
+    url("assets/fonts/BundesSerifWeb/BundesSerifWeb.woff") format("woff"),
+    url("assets/fonts/BundesSerifWeb/BundesSerifWeb.ttf") format("truetype"),
+    url("assets/fonts/BundesSerifWeb/BundesSerifWeb.svg#BundesSerifWeb")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BundesSans Office";
+  src: url("assets/fonts/BundesSansOffice/BundesSansOffice.eot");
+  src: local("BundesSans Office"), local("BundesSansOffice"),
+    url("assets/fonts/BundesSansOffice/BundesSansOffice.eot?#iefix")
+      format("embedded-opentype"),
+    url("assets/fonts/BundesSansOffice/BundesSansOffice.woff2") format("woff2"),
+    url("assets/fonts/BundesSansOffice/BundesSansOffice.woff") format("woff"),
+    url("assets/fonts/BundesSansOffice/BundesSansOffice.ttf") format("truetype"),
+    url("assets/fonts/BundesSansOffice/BundesSansOffice.svg#BundesSansOffice")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: #f4f6fc;
+  font-family: "BundesSans Web";
+  .x-scroll-disabled {
+    overflow-x: hidden;
+  }
+}
+p-dropdown {
+  .p-dropdown {
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    align-items: center;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    border: 1px solid #dededf;
+    border-radius: 4px;
+    opacity: 1;
+  }
+}
+
+p-button {
+  align-content: center;
+  margin-left: 10%;
+  .p-button {
+    background: #1178b7 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+  }
+}
+
+// /* You can add global styles to this file, and also import other style files */
+
+// /* Importing Bootstrap SCSS file. */
+// @import "~bootstrap/scss/bootstrap";
+// * {
+//   font-size: 20px;
+// }
+// p-dropdown {
+//   display: block;
+//   .p-dropdown {
+//     width: 100%;
+//     border: 2px solid #d3e8e6;
+//     border-radius: 10px;
+//   }
+// }
+
+// p-button {
+//   button {
+//     width: 300px;
+//     color: aliceblue;
+//     padding: 1rem;
+//     border: 2px solid #3c8ebd;
+//     box-shadow: 3px 3px #afcbdb;
+//   }
+// }

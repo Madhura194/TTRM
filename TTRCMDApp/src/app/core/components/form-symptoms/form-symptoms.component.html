@@ -1,0 +1,59 @@
+<div class="ttrmform">
+  <div [formGroup]="myForm" class="form">
+    <div class="form-inline mb-4">
+      <div class="col-md-6 mb-4">
+        <label>Enter Symptom 1:</label>
+      </div>
+      <div class="col-sm-4 mb-4">
+        <p-dropdown
+          class="w-100"
+          [options]="constants.SYMPTOM_LIST"
+          [dropdownIcon]="dropdownicon"
+          formControlName="symptoms1"
+          id="symptoms1"
+          placeholder="Select Symptoms"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="form-inline mb-4">
+      <div class="col-md-6 mb-4">
+        <label>Enter Symptom 2:</label>
+      </div>
+      <div class="col-sm-4 mb-4">
+        <p-dropdown
+          class="w-100"
+          [options]="constants.SYMPTOM_LIST"
+          [dropdownIcon]="dropdownicon"
+          formControlName="symptoms2"
+          id="symptoms2"
+          placeholder="Select Symptoms"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="form-inline mb-4">
+      <div class="col-md-6 mb-4">
+        <label>Enter Symptom 3:</label>
+      </div>
+      <div class="col-sm-4 mb-4">
+        <p-dropdown
+          class="w-100"
+          [options]="constants.SYMPTOM_LIST"
+          [dropdownIcon]="dropdownicon"
+          formControlName="symptoms3"
+          id="symptoms3"
+          placeholder="Select Symptoms"
+        ></p-dropdown>
+      </div>
+    </div>
+
+    <div class="form-inline mb-4">
+      <div class="col-sm-8 offset-3 mt-4">
+        <p-button
+          (click)="submitForm()"
+          label="ANALYZE"
+          class="send"
+        ></p-button>
+      </div>
+    </div>
+  </div>
+</div>

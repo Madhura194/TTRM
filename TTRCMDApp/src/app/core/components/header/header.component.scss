@@ -1,0 +1,47 @@
+@import "../../../../../src/mixins.scss";
+@import "../../../../../src/variables.scss";
+@import "bootstrap/dist/css/bootstrap-grid.min.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+:host {
+  background-color: #f4f6fc;
+  font-family: "BundesSans Web";
+  font-weight: bold;
+  .login-wrapper {
+    background-color: #f4f6fc;
+    border-radius: 1px;
+    border-color: #f1a7a7;
+    font-family: "BundesSans Web";
+    font-weight: bold;
+    .logo {
+      left: 66px;
+      margin-left: 2%;
+      margin-top: -1%;
+      width: 426px;
+      height: 62px;
+      background: transparent url("/assets/img/Logo.png") 0% 0% no-repeat
+        padding-box;
+      opacity: 1;
+      font-family: "BundeSans Web";
+    }
+    .left-col {
+      top: 1%;
+      left: 2%;
+      height: 544px;
+      align-content: left;
+      background: transparent url("/assets/img/Group160759-resized.png") 30% 20%
+        no-repeat padding-box;
+      opacity: 1;
+      mix-blend-mode: multiply;
+      font-family: "BundesSans Web";
+    }
+    .right-col {
+      background-color: none;
+    }
+  }
+  .result {
+    text-align: center;
+  }
+  .x-scroll-disabled {
+    overflow-x: hidden;
+  }
+}

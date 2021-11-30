@@ -1,0 +1,42 @@
+Disease,Drug,speciality
+Fungal infection,Amorolfine,fungal infection treatment
+Allergy,Cetirizine,allergy treatment
+GERD,Esomeprazole,nearby hospitals
+Chronic cholestasis,amoxicillin/clavulanate,nearby hospitals
+Drug Reaction,Antihistamines,neaby hospitals
+Peptic ulcer diseae,"amoxicillin, clarithromycin and metronidazole",nearby hospitals
+AIDS,Trimethoprim-sulfamethizole,AIDs treatment
+Diabetes ,Basaglar,Diabetologist
+Gastroenteritis,ondansetron systemic,nearby hospitals
+Bronchial Asthma,doxycycline,ENT specialist
+Hypertension ,thiazide diuretics,Cardiologist
+Migraine,"sumatriptan (Imitrex, Tosymra)",neurologist
+Cervical spondylosis,Ibuprofen/naproxen sodium/acetaminophen,Orthopedic surgen/spine surgen
+Paralysis (brain hemorrhage),Cyklokapron/Methergine/Amicar,neurologist
+Jaundice,Ceftriaxone/Tin mesoporphyrin (SnMp),nearby hospitals
+Malaria,Chloroquine phosphate/Artemisinin,malaria treatment
+Chicken pox,acyclovir (Zovirax) /valacyclovir (Valtrex),nearby docter
+Dengue,acetaminophen/aspirin/ibuprofen/naproxen sodium,neaby hospitals
+Typhoid,Ciprofloxacin,nearby hospitals
+hepatitis A,acetaminophen,liver docters
+Hepatitis B,entecavir (Baraclude)/ tenofovir (Viread)/lamivudine (Epivir)/adefovir (Hepsera)/telbivudine (Tyzeka) ,liver docters
+Hepatitis C,direct acting antiviral (DAA) tablets,liver docters
+Hepatitis D,pegylated interferon alfa (peg-IFNa),liver docters
+Hepatitis E,ribavirin,liver docters
+Alcoholic hepatitis,corticosteroids/pentoxifylline,liver docters
+Tuberculosis,isoniazid INH,ENT specialist
+Common Cold,Chlorpheniramine,nearby docter
+Pneumonia,Azithromycin (Zithromax),ENT specialist
+Dimorphic hemmorhoids(piles),Mezaparox,nearby hospitals
+Heart Attack,Aspirin(first aid purpose),Cardiologist
+Varicose veins,sodium tetradecyl sulfate systemic,orthopedics
+Hypothyroidism,Westhroid,thyroid treatment
+Hyperthyroidism,Thiamazole,thyroid treatment
+Hypoglycemia,glucagon injection/dextrose,Diabetologists
+Osteoarthristis,diclofenac,Orthopedics
+Arthritis,naproxen,Orthopedics
+(vertigo) Paroymsal  Positional Vertigo,prochlorperazine,ENT specialist
+Acne,Isotretinoin,Skin Care Clinics
+Urinary tract infection,Trimethoprim/sulfamethoxazole/fosfomysin,nearby hospitals
+Psoriasis,Methotrexate,skin docters
+Impetigo,mupirocin/retapamulin,skin docters
