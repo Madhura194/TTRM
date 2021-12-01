@@ -39,6 +39,10 @@
     }
   }
   .result {
+    .disease,
+    .drug {
+      color: #666463;
+    }
     text-align: center;
   }
   .x-scroll-disabled {

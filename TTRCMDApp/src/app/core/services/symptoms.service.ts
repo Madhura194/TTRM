@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, mapTo, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,12 +10,12 @@ export class SymptomsService {
   baseURI: string = 'http://localhost:8088/ttr';
   drugUri: string = '/detect/drug';
   diseaseUri: string = '';
-  result: string;
+  result: string[];
 
-  public getRecommendedDrug(diseaseName: string) {
+  public getRecommendedDrug(diseaseName: string): Observable<string[]> {
     let pprms = new HttpParams();
     pprms = pprms.append('diseaseName', diseaseName);
-    return this.httpClient.get<String[]>(this.baseURI + this.drugUri, {
+    return this.httpClient.get<string[]>(this.baseURI + this.drugUri, {
       params: pprms,
     });
   }

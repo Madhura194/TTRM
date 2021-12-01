@@ -15,11 +15,13 @@
   <div class="col-xl-5 mb-6 left-col"></div>
   <div class="col right-col">
     <div class="ttrmform">
-      <app-form-symptoms></app-form-symptoms>
+      <app-form-symptoms (submitEvent)="getResult($event)"></app-form-symptoms>
     </div>
   </div>
 </div>
 <div class="row result">
-  <div class="col-sm-4">Detected condition :</div>
-  <div class="col-sm-6">Recommended treatment :</div>
+  <div class="col-sm-3 mx-5">Detected condition :</div>
+  <div class="col-sm-1 disease">{{ reslt.disease }}</div>
+  <div class="col-sm-3 mx-5">Recommended treatment :</div>
+  <div class="col-sm-1 drug">{{ reslt.drug }}</div>
 </div>

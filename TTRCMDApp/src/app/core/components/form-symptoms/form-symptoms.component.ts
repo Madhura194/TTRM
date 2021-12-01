@@ -4,6 +4,7 @@ import { SYMPTOMS_CONSTANTS } from '../../constants/symptom-constant';
 import { Output, EventEmitter } from '@angular/core';
 import { Symptoms } from '../../symptoms';
 import { SymptomsService } from '../../services/symptoms.service';
+import { mapTo } from 'rxjs';
 
 @Component({
   selector: 'app-form-symptoms',
@@ -11,11 +12,17 @@ import { SymptomsService } from '../../services/symptoms.service';
   styleUrls: ['./form-symptoms.component.scss'],
 })
 export class FormSymptomsComponent implements OnInit {
-  data: Symptoms;
+  data: Symptoms = {
+    symptom1: '',
+    symptom2: '',
+    symptom3: '',
+    disease: 'Not Detected',
+    drug: 'Not detected',
+  };
   myForm: FormGroup = new FormGroup({});
   dropdownicon = 'pi pi-caret-down';
   constants = SYMPTOMS_CONSTANTS;
-  symptomData: String;
+  symptomData: string[] = [];
   constructor(
     private _fb: FormBuilder,
     private symptomsService: SymptomsService
@@ -23,7 +30,7 @@ export class FormSymptomsComponent implements OnInit {
     this.buildForm();
   }
 
-  @Output() submitEvent = new EventEmitter<string[]>();
+  @Output() submitEvent = new EventEmitter<Symptoms>();
 
   getFavSoda = () => this.myForm.get('symptoms')?.value;
   ngOnInit(): void {}
@@ -39,15 +46,19 @@ export class FormSymptomsComponent implements OnInit {
   submitForm(): void {
     if (this.myForm.valid) {
       this.data.symptom1 = this.myForm.get('symptoms1')?.value.label;
-      this.data.symptom3 = this.myForm.get('symptoms2')?.value.label;
+      this.data.symptom2 = this.myForm.get('symptoms2')?.value.label;
       this.data.symptom3 = this.myForm.get('symptoms3')?.value.label;
     }
-
-    this.symptomsService.getRecommendedDrug('Allergy');
-    console.log(this.symptomData);
+    this.symptomsService.getRecommendedDrug('Allergy').subscribe((res) =>
+      res.forEach((r: string) => {
+        this.data.drug = r;
+        console.log(r);
+      })
+    );
+    this.triggerSymptomsData(this.data);
   }
 
-  triggerSymptomsData(result: any) {
-    this.submitEvent.emit(result);
+  triggerSymptomsData(result: Symptoms) {
+    return this.submitEvent.emit(result);
   }
 }
