@@ -19,10 +19,19 @@ export class FormSymptomsComponent implements OnInit {
     disease: 'Not Detected',
     drug: 'Not detected',
   };
-  myForm: FormGroup = new FormGroup({});
+  select1ListModel: string;
+  select2ListModel: string;
+  select3ListModel: string;
+  myForm: FormGroup;
   dropdownicon = 'pi pi-caret-down';
-  constants = SYMPTOMS_CONSTANTS;
+  constants = SYMPTOMS_CONSTANTS.SYMPTOM_LIST;
   symptomData: string[] = [];
+  options = {
+    symptoms1: this.constants,
+    symptoms2: this.constants,
+    symptoms3: this.constants,
+  };
+  @Output() submitEvent = new EventEmitter<Symptoms>();
   constructor(
     private _fb: FormBuilder,
     private symptomsService: SymptomsService
@@ -30,12 +39,19 @@ export class FormSymptomsComponent implements OnInit {
     this.buildForm();
   }
 
-  @Output() submitEvent = new EventEmitter<Symptoms>();
+  ngOnInit(): void {
+    // this.myForm.get('symptoms2').valueChanges.subscribe((symp2) => {
+    //   this.getConstants('symptoms2', symp2);
+    // });
+    // this.myForm.get('symptoms3').valueChanges.subscribe((symp3) => {
+    //   this.getConstants('symptoms3', symp3);
+    // });
+    // this.myForm.get('symptoms1').valueChanges.subscribe((symp1) => {
+    //   this.getConstants('symptoms1', symp1);
+    // });
+  }
 
-  getFavSoda = () => this.myForm.get('symptoms')?.value;
-  ngOnInit(): void {}
-
-  private buildForm(): void {
+  buildForm(): void {
     this.myForm = this._fb.group({
       symptoms1: ['', Validators.required],
       symptoms2: ['', Validators.required],
@@ -44,21 +60,22 @@ export class FormSymptomsComponent implements OnInit {
   }
 
   submitForm(): void {
+    this.submitEvent.emit(this.data);
+  }
+
+  getDisease() {
     if (this.myForm.valid) {
       this.data.symptom1 = this.myForm.get('symptoms1')?.value.label;
       this.data.symptom2 = this.myForm.get('symptoms2')?.value.label;
       this.data.symptom3 = this.myForm.get('symptoms3')?.value.label;
     }
-    this.symptomsService.getRecommendedDrug('Allergy').subscribe((res) =>
-      res.forEach((r: string) => {
-        this.data.drug = r;
-        console.log(r);
-      })
-    );
-    this.triggerSymptomsData(this.data);
+    this.symptomsService.getDetectedDisease(this.data).subscribe((res) => {
+      this.data.disease = res;
+      console.log(this.data.disease);
+    });
   }
 
-  triggerSymptomsData(result: Symptoms) {
-    return this.submitEvent.emit(result);
+  getValueForDropDown(key) {
+    return this.myForm.get(key)?.value;
   }
 }

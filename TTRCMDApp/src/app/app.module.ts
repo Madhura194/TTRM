@@ -13,6 +13,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ButtonModule } from 'primeng/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { ExcludeValuePipe } from './core/exclude-value.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     HeaderComponent,
     FormSymptomsComponent,
+    ExcludeValuePipe,
   ],
   imports: [
     AppRoutingModule,
