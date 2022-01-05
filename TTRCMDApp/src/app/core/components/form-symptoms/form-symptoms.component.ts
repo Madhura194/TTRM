@@ -32,6 +32,8 @@ export class FormSymptomsComponent implements OnInit {
     symptoms3: this.constants,
   };
   @Output() submitEvent = new EventEmitter<Symptoms>();
+  @Output() clearEvent = new EventEmitter<boolean>();
+  @Output() detectEvent = new EventEmitter<string>();
   constructor(
     private _fb: FormBuilder,
     private symptomsService: SymptomsService
@@ -41,13 +43,13 @@ export class FormSymptomsComponent implements OnInit {
 
   ngOnInit(): void {
     // this.myForm.get('symptoms2').valueChanges.subscribe((symp2) => {
-    //   this.getConstants('symptoms2', symp2);
+    //   this.clearResult();
     // });
     // this.myForm.get('symptoms3').valueChanges.subscribe((symp3) => {
-    //   this.getConstants('symptoms3', symp3);
+    //   this.clearResult();
     // });
     // this.myForm.get('symptoms1').valueChanges.subscribe((symp1) => {
-    //   this.getConstants('symptoms1', symp1);
+    //   this.clearResult();
     // });
   }
 
@@ -71,11 +73,21 @@ export class FormSymptomsComponent implements OnInit {
     }
     this.symptomsService.getDetectedDisease(this.data).subscribe((res) => {
       this.data.disease = res;
-      console.log(this.data.disease);
+      this.data.drug = 'Not Detected';
+      this.detectEvent.emit(res);
     });
   }
 
   getValueForDropDown(key) {
     return this.myForm.get(key)?.value;
+  }
+
+  resetForm() {
+    this.myForm.reset();
+  }
+
+  clearResult() {
+    this.clearEvent.emit(true);
+    this.resetForm();
   }
 }

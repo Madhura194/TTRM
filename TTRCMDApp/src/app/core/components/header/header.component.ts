@@ -9,6 +9,7 @@ import { Symptoms } from '../../symptoms';
 })
 export class HeaderComponent implements OnInit {
   flag: Boolean = false;
+  ipAddress: string;
   constructor(private symptomsService: SymptomsService) {}
   reslt: Symptoms = {
     symptom1: '',
@@ -34,5 +35,22 @@ export class HeaderComponent implements OnInit {
           console.log(r);
         })
       );
+  }
+
+  getDiseaseOnanalyze(condition: string) {
+    this.reslt.disease = condition;
+  }
+
+  clearResult(flag: boolean) {
+    if (flag) {
+      this.reslt.disease = 'Not Detected';
+      this.reslt.drug = 'Not Detected';
+    }
+  }
+
+  getCientIp() {
+    this.symptomsService.getClientIp().subscribe((res: any) => {
+      this.ipAddress = res.ip;
+    });
   }
 }

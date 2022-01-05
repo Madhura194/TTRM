@@ -39,13 +39,14 @@
     }
   }
   .result {
-    .disease,
+    font-size: 170%;
+    font-weight: bold;
+    .disease {
+      color: #f64c72;
+    }
     .drug {
-      color: #666463;
+      color: #41b3a3;
     }
     text-align: center;
-  }
-  .x-scroll-disabled {
-    overflow-x: hidden;
   }
 }

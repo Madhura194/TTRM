@@ -1,8 +1,11 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template,jsonify
 import pandas as pd
 import numpy as np
 import pickle
-
+from flask_cors import CORS, cross_origin
+app = Flask(__name__)
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -14,6 +17,7 @@ x_test=test.drop('prognosis',axis=1)
 
 
 @app.route('/predict',methods=['POST','GET'])
+@cross_origin()
 def predict():
     if request.method=='GET':
         col=x_test.columns
@@ -27,11 +31,8 @@ def predict():
         b=b.reshape(1,132)
         prediction = model.predict(b)
         prediction=prediction[0]
-
-        
-       
         print(prediction)
-        return prediction   
+        return jsonify(prediction) 
 
 
 if __name__ == "__main__":

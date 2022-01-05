@@ -8,7 +8,8 @@ import { Symptoms } from '../symptoms';
 })
 export class SymptomsService {
   constructor(private httpClient: HttpClient) {}
-  baseURI: string = 'http://18.192.24.118:';
+  baseURI: string =
+    'http://proactive-pitches-alb-268165641.eu-central-1.elb.amazonaws.com:';
   drugUri: string = '8088/ttr/detect/drug';
   diseaseUri: string = '5000/predict';
   result: string[];
@@ -28,5 +29,9 @@ export class SymptomsService {
     return this.httpClient.get<string>(this.baseURI + this.diseaseUri, {
       params: pprms,
     });
+  }
+
+  getClientIp(): Observable<any> {
+    return this.httpClient.get('http://api.ipify.org/?format=json');
   }
 }

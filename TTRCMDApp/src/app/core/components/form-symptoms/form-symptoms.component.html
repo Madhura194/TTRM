@@ -1,7 +1,7 @@
 <div class="ttrmform">
   <form [formGroup]="myForm" class="form">
     <div class="form-inline mb-4">
-      <div class="col-md-6 mb-4">
+      <div class="col-sm-4 mb-4">
         <label>Enter Symptom 1:</label>
       </div>
       <div class="col-sm-4 mb-4">
@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="form-inline mb-4">
-      <div class="col-md-6 mb-4">
+      <div class="col-sm-4 mb-4">
         <label>Enter Symptom 2:</label>
       </div>
       <div class="col-sm-4 mb-4">
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="form-inline mb-4">
-      <div class="col-md-6 mb-4">
+      <div class="col-sm-4 mb-4">
         <label>Enter Symptom 3:</label>
       </div>
       <div class="col-sm-4 mb-4">
@@ -62,19 +62,27 @@
     </div>
 
     <div class="form-inline mb-4">
-      <div class="col-md-6 offset-3 mt-4">
+      <div class="col-sm-2 mb-4 mx-4">
         <p-button
-          *ngIf="data.disease === 'Not Detected'"
           [disabled]="myForm.invalid"
           (click)="getDisease()"
           label="ANALYZE"
           class="send"
         ></p-button>
+      </div>
+      <div class="col-sm-3 mb-4">
         <p-button
-          *ngIf="data.disease != 'Not Detected'"
           [disabled]="myForm.invalid"
           (click)="submitForm()"
           label="RECOMMEND"
+          class="send"
+        ></p-button>
+      </div>
+      <div class="col-sm-1 mb-4">
+        <p-button
+          [disabled]="myForm.invalid"
+          (click)="clearResult()"
+          label="CLEAR"
           class="send"
         ></p-button>
       </div>

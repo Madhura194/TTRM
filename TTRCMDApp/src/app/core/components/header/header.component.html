@@ -12,16 +12,20 @@
   >
     <h1 class="logo"></h1>
   </section>
-  <div class="col-xl-5 mb-6 left-col"></div>
+  <div class="col-xl-7 mb-6 left-col"></div>
   <div class="col right-col">
     <div class="ttrmform">
-      <app-form-symptoms (submitEvent)="getResult($event)"></app-form-symptoms>
+      <app-form-symptoms
+        (detectEvent)="getDiseaseOnanalyze($event)"
+        (clearEvent)="clearResult(true)"
+        (submitEvent)="getResult($event)"
+      ></app-form-symptoms>
     </div>
   </div>
 </div>
-<div class="row result">
-  <div class="col-sm-3 mx-5">Detected condition :</div>
-  <div class="col-sm-1 disease">{{ reslt.disease }}</div>
-  <div class="col-sm-3 mx-5">Recommended treatment :</div>
-  <div class="col-sm-1 drug">{{ reslt.drug }}</div>
+<div class="row result mx-5">
+  <div class="col-sm-2">Detected condition :</div>
+  <div class="col-sm-3 disease">{{ reslt.disease }}</div>
+  <div class="col-sm-3">Recommended treatment :</div>
+  <div class="col-sm-3 drug">{{ reslt.drug }}</div>
 </div>
