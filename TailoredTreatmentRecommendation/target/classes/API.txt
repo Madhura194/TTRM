@@ -1,1 +1,0 @@
-http://localhost:8088/ttr/detect/drug?diseaseName=Hepatitis%20B
