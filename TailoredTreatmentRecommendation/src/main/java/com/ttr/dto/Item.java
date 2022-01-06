@@ -6,6 +6,8 @@ public class Item {
       String id ;
       String resultType ;
       Address address ;
+      Position position;
+      
 	public String getTitle() {
 		return title;
 	}
@@ -30,6 +32,14 @@ public class Item {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+	public Position getPosition() {
+		return position;
+	}
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	
+	
       
       
 

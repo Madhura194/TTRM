@@ -1,11 +1,8 @@
 package com.ttr.service;
 
-import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,11 +47,9 @@ public class TTRServiceImpl implements TTRService {
 	
 	
 	
-	@Override
-	public String getClientIp(HttpServletRequest request) throws SocketException {
-		return restTemplate.getForEntity(apiProp.getIp(), String.class).getBody();
-	}
 	
+	
+	@Override
 	public GeolocationData getGeolocationFromIp(String ipaddress){
 	
 		return restTemplate.getForObject(apiProp.getGeolocation()+ipaddress, GeolocationData.class);
@@ -62,14 +57,7 @@ public class TTRServiceImpl implements TTRService {
 	}
 
 
-	@Override
-	public Object getNearbyPlaces(String q, String apiKey, String longLat) {
-		Object nearByResponse = restTemplate
-				                .getForObject(apiProp.getDiscover()+longLat+
-				                		      "&q="+q+"&apiKey="+apiKey,Object.class);
-	    	
-		return nearByResponse;
-	}
+	
 
 
 
@@ -79,8 +67,6 @@ public class TTRServiceImpl implements TTRService {
 		
 		String ipaddressOfClient=restTemplate.getForEntity(apiProp.getIp(), String.class)
 				                             .getBody();
-		
-		System.out.println("1");
 		GeolocationData geodata=restTemplate
 				                 .getForObject(apiProp.getGeolocation()+ipaddressOfClient, GeolocationData.class);
 		String latlong = geodata.getLat()+","+geodata.getLon();

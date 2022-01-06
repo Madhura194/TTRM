@@ -25,7 +25,7 @@ public class TTRRepo {
 	public static List<DiseaseDrug> data=new ArrayList<>();
 	
 	@EventListener(ApplicationReadyEvent.class)
-	public void init() {
+	public void load_data() {
 		DiseaseDrug datainst=new DiseaseDrug();
 		try {
 			File file=new File("../drug-disease-mapping.csv");

@@ -1,9 +1,6 @@
 package com.ttr.rest;
 
-import java.net.SocketException;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ttr.dto.GeolocationData;
 import com.ttr.service.TTRService;
 
 @RestController
@@ -33,11 +29,7 @@ public class TTRController {
 		return ttrservice.detectDrugFromDisease(diseaseName);
 	}
 	
-	@GetMapping("/get/geolocation")
-	public GeolocationData geolocationOftheUser(HttpServletRequest request) throws SocketException {
-		String ipaddress=ttrservice.getClientIp(request);
-	    return ttrservice.getGeolocationFromIp(ipaddress);
-	}
+	
 	
 	
 
